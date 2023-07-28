@@ -1,0 +1,108 @@
+
+<!-- Mixin para renderizar um comentário.--><!DOCTYPE html>
+<html>
+  <head>
+    <!-- Link para CSS externo.-->
+    <link rel="stylesheet" href="../style.css">
+    <!-- Estilização interna para a página.-->
+    <style>
+      #title {
+        color: red;
+        text-decoration: underline;
+      }
+      .comment {
+        font-family: serif;
+        line-height: 1.5;
+        padding: 10px;
+        border: 1px solid #555;
+        width: 250px;
+      }
+      .date {
+        font-size: 85%;
+        text-align: right;
+      }
+      .author {
+        font-size: 110%;
+        font-weight: bold;
+      }
+      .text {
+        font-size: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Inclui o arquivo de cabeçalho.-->
+    <header>
+      <navbar>
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+        </ul>
+      </navbar>
+    </header>
+    <h1 id="title">Hello, Pug!</h1>
+    <!-- Parágrafo com texto.-->
+    <p class="paragraph">
+      Template engine para geração de HTML.
+      Esse é um parágrafo com duas linhas.
+    </p>
+    <ul style="text-transform: uppercase;">
+      <!-- Lista não ordenada com três itens.-->
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+    <div class="container"></div>
+    <div id="container"></div>
+    <!-- Input com atributos de acordo com uma condição.-->
+    <input type="password" name="password" data-js="true">
+    <!-- Usando a variável 'classes' para definir classes CSS.-->
+    <div class="other-class class1 class2 class3"></div>
+    <!-- Usando a variável 'styles' para definir estilos inline.-->
+    <div style="color:red;background-color:blue;"></div>
+    <!-- Usando a variável 'attributes' para definir atributos de uma tag.--><img src="photo.png" alt="Minha foto">
+    <!-- Input com atributo 'disabled' com valor baseado em uma condição.-->
+    <input type="text">
+    <!-- Input com atributo 'disabled' definido diretamente.-->
+    <input type="text" disabled>
+    <!-- Usando o loop 'each' para iterar sobre a lista 'numbers'.-->
+    <!-- Parágrafo com o valor do número-->
+    <p>número</p>
+    <p>10</p>
+    <p>10: 0</p>
+    <p>número 10</p>
+    <!-- Parágrafo com o valor do número-->
+    <p>número</p>
+    <p>20</p>
+    <p>20: 1</p>
+    <p>número 20</p>
+    <!-- Parágrafo com o valor do número-->
+    <p>número</p>
+    <p>30</p>
+    <p>30: 2</p>
+    <p>número 30</p>
+    <!-- Usando o loop 'for in' para iterar sobre um array vazio.-->
+    <!-- Caso o array esteja vazio, exibir 'Array vazio!'-->
+    <p>Array vazio!</p>
+    <h2>Meu Site Incrível</h2>
+    <!-- Definindo a variável 'user' com um objeto.-->
+    <!-- Usando estrutura condicional 'if' para exibir mensagem personalizada.-->
+    <!-- Usando 'else if' para exibir mensagem baseada no último login.-->
+    <!-- Link para login caso o usuário não esteja logado.-->
+    <!-- Usando 'else' para exibir link de login caso nenhuma das condições anteriores seja atendida.-->
+    <p>Seu último login foi há 6 minutos.</p><a href="#">Login</a>
+    <!-- Usando a estrutura 'case' para exibir mensagens baseadas no valor da variável 'status'.-->
+    <p>O status está pendente.</p>
+    <!-- Usando mixins 'comment' para renderizar comentários usando os objetos 'c' e 'd'.-->
+    <div class="comment">
+      <div class="date">28/07/2023</div>
+      <div class="author">Marlon</div>
+      <div class="text">Pug é bom demais!</div>
+    </div>
+    <div class="comment">
+      <div class="date">28/07/2023</div>
+      <div class="author">Fulano</div>
+      <div class="text">Pug é bom demais!</div>
+    </div>
+  </body>
+</html>
