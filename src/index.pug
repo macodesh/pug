@@ -1,9 +1,9 @@
 // Mixin para renderizar um comentário.
 mixin comment(comments)
   .comment
-    .date=comments.date
-    .author=comments.author
-    .text=comments.text
+    .date= comments.date
+    .author= comments.author
+    .text= comments.text
 
 doctype html
 html
@@ -69,13 +69,13 @@ html
     each num, i in numbers
       // Parágrafo com o valor do número
       p número
-      p=num
-      p=num + ': ' + i
-      p='número ' + num
+      p= num
+      p= num + ': ' + i
+      p= 'número ' + num
     // Usando o loop 'for in' para iterar sobre um array vazio.
     // Caso o array esteja vazio, exibir 'Array vazio!'
     for el in []
-      p=el
+      p= el
     else
       p Array vazio!
     h2 Meu Site Incrível
