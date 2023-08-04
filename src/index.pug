@@ -1,4 +1,3 @@
-// Mixin para renderizar um comentário.
 mixin comment(comments)
   .comment
     .date= comments.date
@@ -8,9 +7,7 @@ mixin comment(comments)
 doctype html
 html
   head
-    // Link para CSS externo.
     link(rel='stylesheet' href='../style.css')
-    // Estilização interna para a página.
     style.
       #title {
         color: red;
@@ -35,56 +32,38 @@ html
         font-size: 100%;
       }
   body
-    // Inclui o arquivo de cabeçalho.
     include includes/header
     h1#title Hello, Pug!
-    // Parágrafo com texto.
     p.paragraph.
       Template engine para geração de HTML.
       Esse é um parágrafo com duas linhas.
     ul(style='text-transform: uppercase;')
-      // Lista não ordenada com três itens.
       li Item 1
       li Item 2
       li Item 3
     .container
     #container
-    // Input com atributos de acordo com uma condição.
     input(type='password' name='password' data-js=`${5 > 2 ? true : false}`)
-    // Usando a variável 'classes' para definir classes CSS.
     - const classes = ['class1', 'class2', 'class3']
     .other-class(class=classes)
-    // Usando a variável 'styles' para definir estilos inline.
     - const styles = {'color': 'red', 'background-color': 'blue'}
     div(style=styles)
-    // Usando a variável 'attributes' para definir atributos de uma tag.
     - const attributes = {'src': 'photo.png', 'alt': 'Minha foto'}
     img&attributes(attributes)
-    // Input com atributo 'disabled' com valor baseado em uma condição.
     input(type='text' disabled=false)
-    // Input com atributo 'disabled' definido diretamente.
     input(type='text' disabled)
-    // Usando o loop 'each' para iterar sobre a lista 'numbers'.
     - const numbers = [10, 20, 30]
     each num, i in numbers
-      // Parágrafo com o valor do número
       p número
       p= num
       p= num + ': ' + i
       p= 'número ' + num
-    // Usando o loop 'for in' para iterar sobre um array vazio.
-    // Caso o array esteja vazio, exibir 'Array vazio!'
     for el in []
       p= el
     else
       p Array vazio!
     h2 Meu Site Incrível
-    // Definindo a variável 'user' com um objeto.
     - let user = { name: 'Marlon', loggedIn: false, lastLogin: 6 }
-    // Usando estrutura condicional 'if' para exibir mensagem personalizada.
-    // Usando 'else if' para exibir mensagem baseada no último login.
-    // Link para login caso o usuário não esteja logado.
-    // Usando 'else' para exibir link de login caso nenhuma das condições anteriores seja atendida.
     if user.loggedIn
       strong  #{ user.name }
       p
@@ -94,7 +73,6 @@ html
       a(href='#') Login
     else
       a(href='#') Login
-    // Usando a estrutura 'case' para exibir mensagens baseadas no valor da variável 'status'.
     - const status = 'Pending'
     case status
       when 'Pending'
@@ -103,10 +81,8 @@ html
         p O status está em trânsito.
       when 'Completed'
         p O status está completo.
-      // Caso nenhuma das opções anteriores corresponda ao valor de 'status', exibir mensagem padrão.
       default
         p O status ainda não foi atualizado.
-    // Usando mixins 'comment' para renderizar comentários usando os objetos 'c' e 'd'.
     - const c = { date: '28/07/2023', author: 'Marlon', text: 'Pug é bom demais!' }
     - const d = { date: '28/07/2023', author: 'Fulano', text: 'Pug é bom demais!' }
     +comment(c)
